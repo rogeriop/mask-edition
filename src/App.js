@@ -14,8 +14,16 @@ const InputCPF = (props) => {
   />)
 
 }
+// AAA-0000
 const InputPlaca = (props) => {
   const mask = [/[A-Z]/, /[A-Z]/, /[A-Z]/, '-', /\d/, /\d/, /\d/,  /\d/]
+  return (<InputMask guide mask={mask} {...props}
+  />)
+
+}
+// AAA-0000
+const InputCel = (props) => {
+  const mask = ['(', /\d/, /\d/, ')', ' ', /\d/, '.', /[8-9]/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/,  /\d/]
   return (<InputMask guide mask={mask} {...props}
   />)
 
@@ -30,6 +38,7 @@ function App() {
       <InputCPF onChange={evt => setCPF(evt.target.value)}/>
       CPF: {cpf}
       <InputPlaca placeholder='AAA-9999'/>
+      <InputCel placeholder='(99) 9.9999-9999'/>
     </div>
   );
 }
